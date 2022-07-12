@@ -1,0 +1,443 @@
+
+:root {
+  --primary-color:#31C7FF;
+  --secondary-color:#44959F;
+  --background-color: #3A3A3A;;
+  --white:#fff;
+  --black:#000;
+  --send-color:#E4E4E5;
+  --received-color: #B4F0F8;
+  --gray-color:#EFEFEF;
+  --light-gray: #dfdfdf;
+  --dark-gray: #9C9C9C;
+
+  --dark-nav:#2E2E2E;
+  --dark-light:#2E2E2E;
+
+}
+/*Icons*/
+@font-face {
+  font-family: 'qx-icons';
+  src:  url('/resources/fonts/qx-icons.eot?7xl83j');
+  src:  url('/resources/fonts/qx-icons.eot?7xl83j#iefix') format('embedded-opentype'),
+    url('/resources/fonts/qx-icons.ttf?7xl83j') format('truetype'),
+    url('/resources/fonts/qx-icons.woff?7xl83j') format('woff'),
+    url('/resources/fonts/qx-icons.svg?7xl83j#qx-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[data-icon]:before {
+  font-family: "qx-icons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class^="qx-icon"]:before,
+[class*=" qx-icon"]:before {
+  font-family: "qx-icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.qx-icon-chat:before {
+  content: "\e900";
+}
+.qx-icon-ellipsis-v:before {
+  content: "\e901";
+}
+.qx-icon-hand-up:before {
+  content: "\e902";
+}
+.qx-icon-mic-off:before {
+  content: "\e903";
+}
+.qx-icon-mic-on:before {
+  content: "\e904";
+}
+.qx-icon-paperclip:before {
+  content: "\e905";
+}
+.qx-icon-phone-hang-up:before {
+  content: "\e906";
+}
+.qx-icon-record:before {
+  content: "\e907";
+}
+.qx-icon-share-screen:before {
+  content: "\e908";
+}
+.qx-icon-users:before {
+  content: "\e909";
+}
+.qx-icon-video-off:before {
+  content: "\e90a";
+}
+.qx-icon-video-on:before {
+  content: "\e90b";
+}
+.qx-icon-x:before {
+  content: "\e90c";
+}
+
+
+
+/*Sidebar*/
+.wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.wrapper.toggled {
+  padding-left: 0;
+}
+.sidebar-wrapper {
+  z-index: 50;
+  position: absolute;
+  right:0px;
+  width: 0;
+  height: 100%;
+  margin-left: -360px;
+  overflow-y: auto;
+  background: var(--white);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  overflow-x: hidden;
+}
+.wrapper.toggled .sidebar-wrapper {
+  width: 360px;
+}
+.page-content-wrapper {
+  width: 100%;
+  position: absolute;
+}
+.wrapper.toggled .page-content-wrapper {
+  position: absolute;
+  margin-left: 0px;
+}
+/* Sidebar Styles */
+
+.sidebar-nav {
+/*   position: absolute; */
+  top: 0;
+  width: 360px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media(min-width:768px) {
+  .wrapper {
+    padding-right: 360px;
+  }
+  .wrapper.toggled {
+    padding-right: 0;
+  }
+  .sidebar-wrapper {
+    width: 360px;
+  }
+  .wrapper.toggled .sidebar-wrapper {
+    width: 0;
+  }
+  .page-content-wrapper {
+    position: relative;
+  }
+  .wrapper.toggled .page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
+.call-content{
+  background-color: var(--background-color);
+}
+.control-panel{
+  position: fixed;
+  z-index: 100;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  height: 80px;
+  padding: 0 15px;
+}
+
+.control-panel .main-controls button{
+  height: 46px;
+  width: 46px;
+  align-items: center;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 22px;
+  margin: 0px 13px;
+}
+
+
+.img-container{
+  width:40px;
+  height:40px;
+  overflow:hidden;
+}
+.img-container img{
+  width:100%;
+  height:auto
+}
+
+.navbar
+/*Font sizes*/
+.fs-7 {
+  font-size: 7px  !important;
+}
+.fs-8 {
+  font-size: 8px  !important;
+}
+.fs-9 {
+  font-size: 9px  !important;
+}
+.fs-10 {
+  font-size: 10px !important;
+}
+.fs-11 {
+  font-size: 11px !important;
+}
+.fs-12 {
+  font-size: 12px !important;
+}
+.fs-13 {
+  font-size: 13px !important;
+}
+.fs-14 {
+  font-size: 14px !important;
+}
+.fs-15 {
+  font-size: 15px !important;
+}
+.fs-16 {
+  font-size: 16px !important;
+}
+.fs-17 {
+  font-size: 17px !important;
+}
+.fs-18 {
+  font-size: 18px !important;
+}
+.fs-19 {
+  font-size: 19px !important;
+}
+.fs-20 {
+  font-size: 20px !important;
+}
+.fs-21 {
+  font-size: 21px !important;
+}
+.fs-22 {
+  font-size: 24px !important;
+}
+.fs-25 {
+  font-size: 25px !important;
+}
+
+/*Chat*/
+.chat-container {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 80px;
+  top: 60px;
+}
+.message-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 25px 10px 25px;
+  bottom: 0px;
+}
+
+
+.message-container div.sent div{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.message-container div:not(.sent) div {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  flex-direction: row-reverse;
+}
+
+.sent div .hour{
+  padding-left: 60px;
+}
+.received div .hour{
+  padding-right: 60px;
+}
+
+.sent,.received{
+  margin-bottom: 15px;
+}
+
+
+.message-container .hour {
+  color: var(--dark-gray);
+  font-size: 12px;
+  padding: 0px 10px;
+}
+
+.message-container p {
+  position: relative;
+}
+
+/* BUBBLE ARROW SENT */
+.sent p:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -6px;
+  width: 0px;
+  height: 0px;
+  border-top: 0px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 10px solid var(--send-color);
+}
+
+/* BUBBLE ARROW RECEIVED */
+.received p:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -6px;
+  width: 0px;
+  height: 0px;
+  border-top: 0px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 10px solid var(--received-color);
+}
+
+.sent-bubble {
+  background-color: var(--send-color);
+}
+
+.received-bubble {
+  background-color: var(--received-color);
+}
+
+.sent-bubble,
+.received-bubble{
+  max-width: 70%;
+  padding: 10px;
+  margin: 0px 10px 5px;
+  text-align: left;
+  font-size: 14px;
+}
+
+
+.sent-bubble {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.received-bubble {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.input-container {
+  width: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  position: relative;
+  z-index: 70;
+  height: 65px;
+  background-color: var(--gray-color);
+}
+
+.input-container input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  background-color: var(--gray-color);
+}
+
+.input-container a {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.box-scrolly {
+  width: 100%;
+  overflow-y: auto;
+  border-radius: 4px;
+  position: relative;
+  height: 100%;
+
+}
+
+
+.box-scrolly::-webkit-scrollbar{
+  width: 11px;
+  margin-right: 2px;
+  background: #cfcfcf;
+  border-radius: 10px;
+}
+.box-scrolly::-webkit-scrollbar-thumb{
+  width: 11px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.users-on{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+.users{
+  color: #fff;
+  font-size: 12px;
+  position: relative;
+  z-index: 10;
+  bottom: 6px;
+  left: 0px;
+}
+
+.bg-dark-nav {
+  background-color: var(--dark-nav) !important;
+}
